@@ -20,7 +20,8 @@ void setup() {
 
   //size(1000,800,JAVA2D);
   fullScreen();
-  number_font = createFont("nk57-monospace-sc-rg.ttf", height/4);
+  frameRate(15);
+  number_font = createFont("AnonymousPro-Bold.ttf", height/4);
   text_font   = createFont("NixieOne.ttf", height/4);
   
 }
@@ -38,7 +39,7 @@ void modTalkTime(int amt)
 {
   if(talkRunning) return;
   
-  talk_len = max(0, talk_len+ amt);
+  talk_len = max(1, talk_len+ amt);
   
 }
 
@@ -46,7 +47,7 @@ void modSlideCount(int amt)
 {
   if(talkRunning) return;
   
-  num_slides = max(0,num_slides+ amt);
+  num_slides = max(1,num_slides+ amt);
 }
 
 
@@ -80,7 +81,6 @@ void draw() {
       textFont(text_font,height/8);
       text("slides", width*0.33, height*0.33);
       text("mins", width*0.66, height*0.33);
-
     }
     else {
       background(#6BA76D);
